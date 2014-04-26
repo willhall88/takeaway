@@ -8,13 +8,7 @@ class Messenger
     @client = Twilio::REST::Client.new account_sid, auth_token
   end
 
-  def time
-    hour = Time.new.hour + 1
-    min = Time.new.min
-    delivery_time = '%02d:%02d' % [hour, min] 
-  end
-
-  def confirmation
+  def confirmation(time)
 
     message = @client.account.sms.messages.create(
     :body => "Thank you for your Order! it will be with you before #{time}",

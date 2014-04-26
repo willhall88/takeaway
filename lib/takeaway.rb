@@ -1,6 +1,10 @@
 
 class Takeaway
 
+  def initialize
+    # @messenger = Messenger.new
+  end
+
   def show(menu)
     menu.list
   end
@@ -24,6 +28,11 @@ class Takeaway
 
   def has_correct_total?(order)
     user_total == order.cost
+  end
+
+  def confirmation(order)
+    raise "unfortunately your total was incorrect. the order cannot be placed" unless has_correct_total?(order)
+    # messenger.confirmation(time)
   end
 
   def time
