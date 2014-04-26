@@ -3,21 +3,26 @@ require 'takeaway'
 describe Takeaway do
   let(:takeaway){Takeaway.new}
   
-  it "can ask for the menu" do
+  it 'can ask for the menu' do
     menu = double :menu
     expect(menu).to receive(:list)
     takeaway.show(menu)
   end
 
-  it "can show the menu" do
+  it 'can show the menu' do
     menu = double :menu, :list => ["haddock", "£2.00"]
     expect(takeaway.show(menu)).to eq ["haddock", "£2.00"]
+  end
+
+  it 'can accept user input of items' do
+    takeaway.stub!(:gets).and_return("Haddock", "2")
+    expect(takeaway.place_order).to eq "2"
   end
 
 
 
 
-  it "should know what time an hour from now is" do
+  it 'should know what time an hour from now is' do
     takeaway = Takeaway.new
     expect(takeaway.time).to eq "#{(Time.new.hour) +1}:#{'%02d' % Time.new.min}"
   end
