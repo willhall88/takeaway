@@ -22,6 +22,10 @@ class Takeaway
     total = gets.chomp
   end
 
+  def has_correct_total?(order)
+    user_total == order.cost
+  end
+
   def time
     hour = Time.new.hour + 1
     min = Time.new.min

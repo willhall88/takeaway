@@ -29,6 +29,20 @@ describe Takeaway do
     expect(takeaway.user_total).to eq "4.00"
   end
 
+  it 'can compare the input cost with the total cost' do
+    takeaway.stub(:gets).and_return("4.00")
+    takeaway.user_total
+    expect(order).to receive(:cost){"4.00"}
+    expect(takeaway).to have_correct_total(order)
+  end
+
+  it 'knows it the totals dont match' do
+    takeaway.stub(:gets).and_return("4.00")
+    takeaway.user_total
+    expect(order).to receive(:cost){"2.00"}
+    expect(takeaway).not_to have_correct_total(order)
+  end
+
 
 
   it 'should know what time an hour from now is' do
