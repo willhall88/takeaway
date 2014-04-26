@@ -22,8 +22,8 @@ describe Order do
 
   it"should be able to add up cost of order" do
     dish_2 = double :dish, name: :haddock, :price => 3.00
-    order.add(dish_1, 1)
-    order.add(dish_2, 1)
+    order.add(dish_1)
+    order.add(dish_2)
     expect(order.cost).to eq 5.00
   end
 

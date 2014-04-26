@@ -4,12 +4,14 @@ class Order
     @dishes = []
   end
 
-  def dishes
-    @dishes
-  end
+  attr_accessor :dishes
 
-  def add(dish, quantity)
-    @dishes << dish * quantity
+  def add(dish, quantity = 1)
+    number = 1
+    while number <= quantity 
+      @dishes << dish
+      number += 1
+    end
     dishes
   end
 
