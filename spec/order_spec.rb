@@ -2,7 +2,7 @@ require 'order'
 
 describe Order do
   let(:order){Order.new}
-  let(:dish_1){double :dish, name: :cod, :price => 2.00}
+  let(:dish_1){double :dish, name: :Cod, :price => 2.00}
 
 
 
@@ -21,10 +21,15 @@ describe Order do
   end
 
   it"should be able to add up cost of order" do
-    dish_2 = double :dish, name: :haddock, :price => 3.00
+    dish_2 = double :dish, name: :Haddock, :price => 3.00
     order.add(dish_1)
     order.add(dish_2)
     expect(order.cost).to eq 5.00
+  end
+
+  it "should be able to list the placed order" do
+    order.add(dish_1, 2)
+    expect(order.list).to be_an String
   end
 
 
