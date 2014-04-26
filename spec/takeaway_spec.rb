@@ -2,23 +2,32 @@ require 'takeaway'
 
 describe Takeaway do
   let(:takeaway){Takeaway.new}
-  
+  let(:menu) {double :menu, :list => ["haddock", "£2.00"]}
+  let(:order) {double :order}
   it 'can ask for the menu' do
-    menu = double :menu
     expect(menu).to receive(:list)
     takeaway.show(menu)
   end
 
   it 'can show the menu' do
-    menu = double :menu, :list => ["haddock", "£2.00"]
     expect(takeaway.show(menu)).to eq ["haddock", "£2.00"]
   end
 
   it 'can accept user input of items' do
-    takeaway.stub!(:gets).and_return("Haddock", "2")
-    expect(takeaway.place_order).to eq "2"
+    takeaway.stub(:gets).and_return("Haddock", "2")
+    expect(takeaway.user_input).to eq "2"
   end
 
+  it 'can add the user input to an order' do
+    takeaway.stub(:gets).and_return("Haddock", "2")
+    expect(order).to receive(:add)
+    takeaway.place(order)
+  end
+
+  it 'can ask for the total cost' do
+    takeaway.stub(:gets).and_return("4.00")
+    expect(takeaway.user_total).to eq "4.00"
+  end
 
 
 

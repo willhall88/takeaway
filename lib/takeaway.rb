@@ -5,13 +5,22 @@ class Takeaway
     menu.list
   end
 
-  def place_order
-    puts"Please type your dish of choice"
-    dish = gets.chomp
-    puts"Please type the quantity you want"
-    quantity = gets.chomp
+  def user_input
+    print"Please type your dish of choice"
+    @dish = gets.chomp
+    print"Please type the quantity you want"
+    @quantity = gets.chomp
+  end
+
+  def place(order)
+    user_input
+    order.add(@dish, @quantity)
   end
   
+  def user_total
+    print"Please type the total for your order (£):"
+    total = gets.chomp
+  end
 
   def time
     hour = Time.new.hour + 1
