@@ -5,15 +5,26 @@ class Takeaway
     # @messenger = Messenger.new
   end
 
+
+  # def options
+  #   puts "======================================"
+  #   puts "Enter a number to go an option"
+  #   puts "1. View Menu"
+  #   puts "2. Order an item"
+  #   puts "3. View order"
+  #   puts "4. Exit"
+  #   gets.chomp
+  # end
+
   def show(menu)
     menu.list
   end
 
   def user_input
-    print"Please type your dish of choice"
+    print"Please type your dish of choice  "
     @dish = gets.chomp
-    print"Please type the quantity you want"
-    @quantity = gets.chomp
+    print"Please type the quantity you want  "
+    @quantity = STDIN.gets.chomp
   end
 
   def place(order)
@@ -22,7 +33,7 @@ class Takeaway
   end
   
   def user_total
-    print"Please type the total for your order (£):"
+    print"Please type the total for your order (£): "
     total = gets.chomp
   end
 

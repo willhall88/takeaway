@@ -7,7 +7,13 @@ describe Takeaway do
   
   # context "user interface" do
   #   it'can list a menu of options' do
+  #     takeaway.stub(:gets).and_return("4")
   #     expect(takeaway.options).to be_an String
+  #   end
+
+  #   it 'can accept a user choice' do
+  #     takeaway.stub(:gets).and_return(1)
+  #     expect(takeaway).to receive(:show)
   #   end
   # end
 
