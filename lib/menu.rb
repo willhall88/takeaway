@@ -10,7 +10,8 @@ class Menu
   end
 
   def list
-    list = @menu.map {|dish| " #{dish.name} -- #{'%.2f' % dish.price} /n"}
-    list.join
+    list = @menu.map {|dish| " #{dish.name} -- #{'%.2f' % dish.price} \n"}.join
+    puts"MENU\n#{list}"
+    list
   end
 end
