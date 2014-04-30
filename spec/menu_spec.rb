@@ -1,12 +1,9 @@
 require "menu"
 
 describe Menu do
-  # let(:dish_2){Dish.new("haddock", 3.00)}
-  # let(:dish_1){Dish.new("cod", 2.50)}
   let(:dish_1){double :dish, name: :Haddock, :price => 2.00}
   let(:dish_2){double :dish,  name: :Cod, :price => 3.00}
   let(:menu){Menu.new}
-
 
   it "should have an array of dishes when it is created" do
     expect(menu).to have_dishes
@@ -16,5 +13,4 @@ describe Menu do
     menu.stub(:puts)
     expect(menu.list).to be_an String
   end
-
 end

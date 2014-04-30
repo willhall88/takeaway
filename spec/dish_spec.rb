@@ -10,5 +10,4 @@ describe Dish do
     dish = Dish.new('haddock', 2.00)
     expect(dish.price).to eq 2.00
   end
-
 end

@@ -17,6 +17,4 @@ class Messenger
 
     puts message.sid 
   end
-
-
 end

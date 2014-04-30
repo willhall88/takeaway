@@ -5,7 +5,6 @@ describe Takeaway do
   let(:menu) {double :menu, :list => ["Haddock", "£2.00"]}
   let(:order) {double :order}
   
-
   context "showing the menu" do
     it 'can ask for the menu' do
       expect(menu).to receive(:list)
@@ -67,9 +66,7 @@ describe Takeaway do
     end
   end
 
-
   it 'should know what time an hour from now is' do
     expect(takeaway.time).to eq "#{(Time.new.hour) +1}:#{'%02d' % Time.new.min}"
   end
-
 end

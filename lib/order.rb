@@ -26,5 +26,4 @@ class Order
      print "#{list}"
      list
   end
-
 end

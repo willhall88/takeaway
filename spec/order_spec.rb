@@ -32,6 +32,4 @@ describe Order do
     order.add(dish_1, 2)
     expect(order.list).to be_an String
   end
-
-
 end
