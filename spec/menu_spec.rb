@@ -13,6 +13,7 @@ describe Menu do
   end
 
   it "should be able to list the dishes" do
+    menu.stub(:puts)
     expect(menu.list).to be_an String
   end
 

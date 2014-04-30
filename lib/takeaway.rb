@@ -7,15 +7,12 @@ require_relative 'messenger'
 class Takeaway
 
   def initialize
-    # messenger = Messenger.new
-    order = Order.new
+    @messenger = Messenger.new
   end
 
   def show(menu)
     menu.list
   end
-
-
 
   def user_total
     print"Please type the total for your order (£): "
@@ -26,10 +23,9 @@ class Takeaway
     user_total.to_i == order.cost
   end
 
-  def confirmation(order)
+  def confirmation(order, messenger = @messenger)
     raise "unfortunately your total was incorrect. the order cannot be placed" unless has_correct_total?(order)
-    
-    # messenger.confirmation(time)
+    messenger.confirmation(time)
   end
 
   def time
