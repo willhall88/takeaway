@@ -1,4 +1,7 @@
+require_relative 'dish'
+
 class Menu
+
   def initialize(menu = [])
     @menu = menu
   end

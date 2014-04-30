@@ -3,7 +3,7 @@ require 'order'
 describe Order do
   let(:order){Order.new}
   let(:dish_1){double :dish, name: :Cod, :price => 2.00}
-
+  let(:menu) {double :menu}
 
 
   it "should be empty when it is created"do

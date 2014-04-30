@@ -1,3 +1,4 @@
+
 class Order
 
   def initialize
@@ -6,13 +7,12 @@ class Order
 
   attr_accessor :dishes
 
-  def add(dish, quantity = 1)
+  def add(selected_dish, quantity = 1)
     number = 1
     while number <= quantity 
-      @dishes << dish
+      @dishes << selected_dish
       number += 1
     end
-    # @dishes.map {|dish| print "#{dish.name} -- £#{'%.2f' % dish.price} \n"}.join
     dishes
   end
 

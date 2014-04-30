@@ -30,15 +30,10 @@ describe Takeaway do
   
   context "ordering the food" do  
     before(:each) { takeaway.stub(:gets).and_return("Haddock", "2") }
-
-
-    it 'can accept user input of items' do
-      expect(takeaway.user_input).to eq "2"
-    end
-
-    it 'can add the user input to an order' do
-      expect(order).to receive(:add)
-      takeaway.place(order)
+    
+    it 'can show the order'do
+      expect(order).to receive(:list)
+      takeaway.show(order)
     end
   end
 
