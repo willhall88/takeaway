@@ -13,7 +13,7 @@ Technologies
 How to run it
 --------------
 
-`
+```
  git clone https://github.com/willhall88/takeaway.git
  cd Takeaway
  irb
@@ -23,7 +23,7 @@ How to run it
  fish = Dish.new('Fish', 3.50)
  chips = Dish.new('Chips', 1.50)
  menu = Menu.new(['fish', 'chips'])
-`
+```
 You can now view your menu and your empty order.
 
 Now make an order giving the dish and the quantity(this is defaulted to 1).
@@ -35,8 +35,8 @@ Now confirm your order. It will ask you to submit your total price. if this is i
 How to run tests
 ----------------
 
-`
+```
  git clone https://github.com/willhall88/takeaway.git
  cd Takeaway
  rspec	
-`
+```
