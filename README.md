@@ -1,18 +1,42 @@
 Takeaway
 ========
+Week 4 weekend test. The excercise was to create a Takeaway program that takes in orders from a menu and sends a SMS confirmation to your phone after successfully ordering.
 
-Rubyist - Week 4
+The objectives of the excercise was to more experience in Object Oriented Programming, Test Driven Development and use of Ruby Gems.
 
-Open irb
+Technologies
+------------
+- Ruby
+- Rspec
+- Twilio
 
-require the takeaway file
-create a new instance of a takeaway, an order and make some new instances of dishes.
-create a menu with an array of the dishes in the argument
+How to run it
+--------------
 
-you can now view your menu and your empty order
+`
+ git clone https://github.com/willhall88/takeaway.git
+ cd Takeaway
+ irb
+ require './lib/takeaway.rb'
+ takeaway = Takeaway.new
+ order = Order.new
+ fish = Dish.new('Fish', 3.50)
+ chips = Dish.new('Chips', 1.50)
+ menu = Menu.new(['fish', 'chips'])
+`
+You can now view your menu and your empty order.
 
-now make an order giving the dish and the quantity(this is defaulted to 1)
+Now make an order giving the dish and the quantity(this is defaulted to 1).
 
-you can now view your menu and see how much it will cost
+You can now view your menu and see how much it will cost.
 
-now confirm your order. It will ask you to submit your total price. if this is incorrect then an error will be raise, if this is correct then a confirmation text will be sent.
+Now confirm your order. It will ask you to submit your total price. if this is incorrect then an error will be raised, if this is correct then a confirmation text will be sent.
+
+How to run tests
+----------------
+
+`
+ git clone https://github.com/willhall88/takeaway.git
+ cd Takeaway
+ rspec	
+`
